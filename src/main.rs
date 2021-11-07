@@ -11,7 +11,7 @@ async fn main() -> Result<(), Error> {
 
 async fn handler(event: Event, context: Context) -> Result<Output, Error> {
     Ok(Output {
-        message: format!("{} {}", event.first_name, event.second_name),
+        message: format!("{} {}.", event.first_name, event.second_name),
         request_id: context.request_id,
     })
 

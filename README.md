@@ -1,4 +1,4 @@
-#### set up (MacOS)
+#### Set up (MacOS)
 1. Add x86_64 target architecture for Rust
 ```shell
 rustup target add x86_64-unknown-linux-musl
@@ -11,7 +11,7 @@ sudo brew install filosottile/musl-cross/musl-cross
 ```
 echo $'[target.x86_64-unknown-linux-musl]\nlinker = "x86_64-linux-musl-gcc"' > .cargo/config
 ```
-#### build
+#### Build
 1. Build the project
 ```shell
 cargo build --release --target x86_64-unknown-linux-musl
@@ -20,3 +20,11 @@ cargo build --release --target x86_64-unknown-linux-musl
 ```shell
 cp ./target/x86_64-unknown-linux-musl/release/lambda_rust ./bootstrap && zip lambda.zip bootstrap && rm bootstrap
 ```
+
+#### Deploy
+
+Deployment is manual at the moment
+
+1. Sign in to AWS console and navigate to Lambda section
+2. Create Lambda by choosing custom runtime option
+3. Deploy the .zip file

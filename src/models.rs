@@ -8,6 +8,5 @@ pub struct Output {
 
 #[derive(Deserialize)]
 pub struct Event {
-    pub first_name: String,
-    pub second_name: String,
+    pub message: String
 }

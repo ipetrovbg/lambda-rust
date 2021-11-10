@@ -14,7 +14,7 @@ echo $'[target.x86_64-unknown-linux-musl]\nlinker = "x86_64-linux-musl-gcc"' > .
 #### Build
 1. Build the project
 ```shell
-cargo build --release --target x86_64-unknown-linux-musl
+TARGET_CC=x86_64-linux-musl-gcc \ RUSTFLAGS="-C linker=x86_64-linux-musl-gcc" \ cargo build --release --target x86_64-unknown-linux-musl
 ```
 2. Packaging binaries and zipping them into lambda.zip file
 ```shell

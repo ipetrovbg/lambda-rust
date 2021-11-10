@@ -7,12 +7,12 @@ rustup target add x86_64-unknown-linux-musl
 ```shell
 sudo brew install filosottile/musl-cross/musl-cross
 ```
-3. Create .cargo/config and targeting x86_64 architecture for linux 
+3. Create .cargo/config and target x86_64 architecture for linux 
 ```
 echo $'[target.x86_64-unknown-linux-musl]\nlinker = "x86_64-linux-musl-gcc"' > .cargo/config
 ```
 #### Build
-1. Build the project
+1. Build the project with the target
 ```shell
 TARGET_CC=x86_64-linux-musl-gcc \ RUSTFLAGS="-C linker=x86_64-linux-musl-gcc" \ cargo build --release --target x86_64-unknown-linux-musl
 ```
@@ -28,3 +28,10 @@ Deployment is manual at the moment
 1. Sign in to AWS console and navigate to Lambda section
 2. Create Lambda by choosing custom runtime option
 3. Deploy the .zip file
+
+#### Lambda test event
+```json
+{
+  "message": "Hello from Rust"
+}
+```
